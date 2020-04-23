@@ -2,6 +2,7 @@
  * @lc app=leetcode.cn id=20 lang=javascript
  *
  * [20] 有效的括号
+ * first commit
  */
 
 // @lc code=start
