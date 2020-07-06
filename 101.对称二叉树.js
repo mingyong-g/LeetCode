@@ -2,6 +2,18 @@
  * @lc app=leetcode.cn id=101 lang=javascript
  *
  * [101] 对称二叉树
+ * 
+ * @des
+ * 给定一个二叉树，检查它是否是镜像对称的。
+ * 
+ * @demo
+ * 例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
+ *     1
+ *    / \
+ *   2   2
+ *  / \ / \
+ * 3  4 4  3
+ * 
  */
 
 // @lc code=start
@@ -43,7 +55,7 @@ var isSymmetric = function(root) {
     /** 【递归】 左树的右子树同右树的左子树比较；左树的左子树同右树的右子树比较 */
     return symmetric(t1.left,t2.right)&&symmetric(t1.right,t2.left);
   }
-  
+
 };
 // @lc code=end
 
