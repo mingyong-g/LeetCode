@@ -160,17 +160,23 @@ function bucketSort(arr){
   let min = Math.min.apply(Math,arr);
   let max = Math.max.apply(Math,arr);
   let dif = max - min;
+  /** n个元素n个桶  */
   let bucketNum = arr.length;
   let bucketArr = [];
   for (var i = 0; i <= bucketNum; i++) {
     bucketArr[i] = [];
   }
   arr.forEach(item=>{
+    /**
+     * 元素对应的桶的下标计算原则：等比分法
+     * arr[i]-min/max-min = index-0/length-1-0
+     */
     let index = parseInt( (item-min)*(bucketNum-1)/dif );
     bucketArr[index].push(item); 
   })
 
   let index = 0;
+  /** 从小到大输出桶，每个桶的元素也是从小到大输出 */
   bucketArr.forEach(item=>{
     quickSingleLoop(item);
     item.forEach(list=>{
@@ -179,6 +185,3 @@ function bucketSort(arr){
     })
   })
 }
-
-bucketSort(arr);
-console.log(arr);
